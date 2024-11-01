@@ -1,65 +1,25 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./page.module.css";
+import styles from "../styles/page.module.css";
+import PokemonList from "@/features/home/pokemonList/PokemonList";
+import axios from "axios";
+import PokemonAction from "@/features/home/pokemonAction/PokemonAction";
+import { Header } from "@/components";
 
-export default function Home() {
+async function getPokemonData() {
+    const res = await axios.get("https://pokeapi.co/api/v2/pokemon");
+
+    return res.data;
+}
+
+export default async function Home() {
+    const initialData = await getPokemonData();
     return (
         <div className={styles.layout}>
-            <div className={styles.gridContainer}>
-                <Link
-                    href={{
-                        pathname: "/detail",
-                        query: {
-                            name: "test",
-                        },
-                    }}
-                    className={styles.card}
-                >
-                    <p>sdhsjhds</p>
-                    <p>test</p>
-                </Link>
-                <div className={styles.card}>
-                    <p>test 2</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 3</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 4</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 4</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 4</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 4</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 2</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 3</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 4</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 4</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 4</p>
-                </div>
-                <div className={styles.card}>
-                    <p>test 4</p>
-                </div>
-            </div>
-
-            <p>test</p>
+            <Header />
+            <PokemonAction />
+            <PokemonList initialData={initialData} />
         </div>
     );
 }

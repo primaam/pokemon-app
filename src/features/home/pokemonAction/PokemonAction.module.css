@@ -1,0 +1,39 @@
+.container{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.sortContainer{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px
+}
+
+.container input{
+    width: 100%;
+    max-width: 400px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.notFound{
+    padding: 0 16px;
+    color: grey;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .container{
+        flex-direction: column;
+        gap: 10px
+    }
+    .notFound{
+        text-align: center;
+    }
+  }

@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit"
-import {PokemonDetailTypes} from "@/types/pokemonDetail"
+import {PokemonDetailTypes} from "@/types/pokemon/pokemonDetail"
 
 const initialState : PokemonDetailTypes={
     abilities: [],

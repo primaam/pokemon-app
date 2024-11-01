@@ -9,11 +9,17 @@ export interface PokemonUrlDetailTypes{
     imageUrl:string;
 }
 
+export interface PokemonSort{
+    sort: 'asc' | 'desc'
+}
+
 export interface PokemonListTypes{
     count:number | 0;
     next: string | null;
     previous: string | null;
-    results: PokemonUrlDetailTypes[] | []
+    results: PokemonUrlDetailTypes[] | [];
+    filteredResults: PokemonUrlDetailTypes[] |[];
+    searchQuery: string;
 }
 
 

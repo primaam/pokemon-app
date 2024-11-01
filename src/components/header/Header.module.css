@@ -1,0 +1,11 @@
+.headerContainer{
+    padding: 16px;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+   .headerContainer{
+    text-align: center;
+   }
+  }
