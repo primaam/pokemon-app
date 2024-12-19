@@ -1,0 +1,13 @@
+.rotateUp {
+    transform: rotate(180deg); /* Rotasi panah ke atas */
+}
+
+.rotateDown {
+    transform: rotate(0deg); /* Rotasi panah ke bawah */
+}
+.icon {
+    display: inline-block;
+    font-size: 16px;
+    transition: transform 0.3s ease; /* Menambahkan efek animasi */
+}
+
